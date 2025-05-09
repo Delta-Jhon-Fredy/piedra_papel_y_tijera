@@ -1,67 +1,22 @@
-// v1-1 - Elección máquina.
+function getComputerChoice () {
 
-function getComputerChoice (min , max) {
+  const randomNumber = (min , max) => Math.floor(Math.random() * (max - min + 1) + min);
+    let choiceComputer = randomNumber(1 , 3);
 
-  return Math.floor(Math.random() * (max - min + 1) + min);
+  if (choiceComputer === 1) {
 
-}
+     return "rock";
 
+  } else if (choiceComputer === 2){
 
-function rangeConvert (num) {
+      return "paper"
 
-if (num === 1) {
+  } else if (choiceComputer === 3) {
 
-   return "piedra";
+      return "scissors";
 
-} else if (num === 2){
+  }    
 
-    return "papel"
-
-} else if (num === 3) {
-
-    return "tijera";
-
-}    
+  return randomNumber(1 , 3)
 
 }
-
-let computerChoice = rangeConvert(getComputerChoice(1 , 3));
-
-console.log(`La Máquina ha elegido: ${computerChoice}`);
-
-// v2-1 - eleccón humana.
-
-let humanChoice = prompt(`Elige entre: "Piedra", "Papel" y "Tijera".`);
-
-
-// v3-1 - Ronda.
-
-function playRound (humanChoice, computerChoice) {
-    humanChoice = humanChoice.toLowerCase();
-    computerChoice = computerChoice.toLowerCase();
-
-  if (
-    (humanChoice === "piedra" && computerChoice === "tijera") ||
-    (humanChoice === "papel" && computerChoice === "piedra") ||
-    (humanChoice === "tijera" && computerChoice === "papel")
-    ){
-
-    return "Has ganado";
-
-  }else if(
-    (computerChoice === "piedra" && humanChoice === "tijera") ||
-    (computerChoice === "papel" && humanChoice === "piedra") ||
-    (computerChoice === "tijera" && humanChoice === "papel")
-    ){
-
-    return "Has perdido";
-
-  } else {
-
-    return "Empate";
-
-  }
-
-}
-
-console.log(playRound(humanChoice, computerChoice));
