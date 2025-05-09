@@ -31,3 +31,38 @@ function getHumanChoice (){
 
  console.log("Game: Rock, paper and scissors")
       console.log("-°--°--°--°--°-")
+
+function playRound (humanChoice, computerChoice) {
+      humanChoice = humanChoice.toLowerCase();
+      computerChoice = computerChoice.toLowerCase();
+      console.log(`The user choice is: ${humanChoice}`);
+      console.log(`The computer choice is: ${computerChoice}`);
+
+    if (
+      (humanChoice === "rock" && computerChoice === "scissors") ||
+      (humanChoice === "paper" && computerChoice === "rock") ||
+      (humanChoice === "Scissors" && computerChoice === "paper")
+      ){
+      
+        console.log("Human win this round");
+          userScore++;
+  
+    }else if(
+      (computerChoice === "rock" && humanChoice === "scissors") ||
+      (computerChoice === "paper" && humanChoice === "rock") ||
+      (computerChoice === "scissors" && humanChoice === "paper")
+      ){
+  
+        console.log("the computer win this round");
+          computerScore++;
+  
+    }else {
+
+      console.log("This round ends in a draw");
+
+    }
+
+    console.log(`User score: ${userScore}`);
+    console.log(`Computer score: ${computerScore}`);
+    console.log("----------")
+}
