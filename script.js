@@ -62,7 +62,33 @@ function playRound (humanChoice, computerChoice) {
 
     }
 
-    console.log(`User score: ${userScore}`);
-    console.log(`Computer score: ${computerScore}`);
-    console.log("----------")
+      console.log(`User score: ${userScore}`);
+        console.log(`Computer score: ${computerScore}`);
+          console.log("----------")
 }
+
+function playGame () {
+  for (let i = 0; i < 5; i++){
+    console.log(`Round number: ${i + 1}`);
+     let humanChoice = getHumanChoice();
+       let computerChoice = getComputerChoice();
+          playRound(humanChoice , computerChoice);
+  } 
+
+  if (userScore > computerScore){
+
+    console.log("USER WIN THIS GAME.");
+
+  }else if (computerScore > userScore){
+
+    console.log("THE COMPUTER WIN THIS GAME.");
+
+  }else {
+
+    console.log("DRAW .");
+
+  }
+}
+
+
+playGame()
